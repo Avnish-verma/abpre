@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* --- GLOBAL MOBILE TWEAKS --- */
+body {
+  background-color: #f8fafc; /* Slate-50 */
+  overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile if not needed */
+  -webkit-tap-highlight-color: transparent; /* Remove blue highlight on tap */
+}
+
+/* Hide Scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Safe Area for iPhones with Notch */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* --- PREMIUM PLAYER MOBILE STYLES --- */
+.premium-player-page {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky Video on Mobile */
+.sticky-video-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #000;
+}
+
+/* Mobile Tabs */
+.mobile-tabs {
+  position: sticky;
+  top: 0; /* Below video */
+  z-index: 40;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.mobile-tab-btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+.mobile-tab-btn.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+/* --- BOTTOM NAV FIX --- */
+.bottom-nav-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .bottom-nav-container {
+    display: none; /* Hide on Desktop */
+  }
+}
